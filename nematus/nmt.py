@@ -3,6 +3,14 @@
 '''
 Build a neural machine translation model with soft attention
 '''
+
+import numpy
+
+try:
+    numpy.distutils.__config__.blas_opt_info = numpy.distutils.__config__.blas_ilp64_opt_info
+except Exception:
+    pass
+
 import theano
 import theano.tensor as tensor
 from theano.sandbox.rng_mrg import MRG_RandomStreams as RandomStreams
@@ -10,7 +18,6 @@ from theano.sandbox.rng_mrg import MRG_RandomStreams as RandomStreams
 import cPickle as pkl
 import json
 import ipdb
-import numpy
 import copy
 import argparse
 
