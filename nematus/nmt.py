@@ -9,7 +9,7 @@ import numpy
 try:
     numpy.distutils.__config__.blas_opt_info = numpy.distutils.__config__.blas_ilp64_opt_info
 except Exception:
-    pass
+    print("Cant not change blas_opt_info")
 
 import theano
 import theano.tensor as tensor
